@@ -1,0 +1,51 @@
+
+Epoch: 10
+	trainingError:	0.093889
+	trainingLoss:	989.563616
+	testError:	0.091000
+	testLoss:	117.164625
+Epoch: 20
+	trainingError:	0.085444
+	trainingLoss:	946.694625
+	testError:	0.087000
+	testLoss:	115.617183
+Epoch: 30
+	trainingError:	0.074889
+	trainingLoss:	836.978728
+	testError:	0.086000
+	testLoss:	109.862075
+Epoch: 40
+	trainingError:	0.073000
+	trainingLoss:	833.647780
+	testError:	0.085000
+	testLoss:	108.710691
+Epoch: 50
+	trainingError:	0.068778
+	trainingLoss:	816.458443
+	testError:	0.083000
+	testLoss:	109.487401
+Epoch: 60
+	trainingError:	0.067444
+	trainingLoss:	792.026149
+	testError:	0.087000
+	testLoss:	110.068998
+Epoch: 70
+	trainingError:	0.064667
+	trainingLoss:	759.110483
+	testError:	0.087000
+	testLoss:	109.548923
+Epoch: 80
+	trainingError:	0.064000
+	trainingLoss:	741.853345
+	testError:	0.086000
+	testLoss:	108.267975
+Epoch: 90
+	trainingError:	0.062778
+	trainingLoss:	732.934923
+	testError:	0.087000
+	testLoss:	110.055908
+Epoch: 100
+	trainingError:	0.061556
+	trainingLoss:	722.986692
+	testError:	0.087000
+	testLoss:	109.515776

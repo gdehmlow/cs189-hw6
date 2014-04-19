@@ -3,6 +3,6 @@ function [ value ] = crossEntropyLossDerivative(output,label)
 %   Detailed explanation goes here
 
 value = output-label;
-value = value/(output*(1-output));
+value = value/((output+10^-7)*((1-output)+10^-7));
 end
 
