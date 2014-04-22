@@ -1,9 +1,12 @@
-function [ bestTestError, bestTestWeights, bestEpoch] = makeAndTestSingleLayer(data,labels,numOutputs,NLFunc,...
-    NLDerivative,lossFunc,lossDerivative,epochs,reportFreq,stepSizeFunc)
+function [ bestTestError, bestTestWeights, bestEpoch] = makeAndTestMultiLayer(data,labels,...
+    numOutputs,ONLFunc,ONLDerivative,...
+    numLayers,layerSizes,lossFunc,lossDerivative,HNLFunc,HNLDerivative,...
+    epochs,reportFreq,stepSizeFunc)
 % NLFunc - nonlinear function used in neural net e.g. @sigmoid.m
 % NLDerivative - the derivative of NLFunc
 % lossFunc - the loss function e.g. @meanSquaredLoss.m or @crossEntropyLoss.m
 % lossDerivative - the derivative of lossFunc
+
 if size(data,3) ~= 1
     newData = zeros(size(data,3),size(data,1)*size(data,2));
     for i=1:size(data,3)
@@ -22,23 +25,25 @@ trainData = data(randIndexes(floor(size(data,1)/10)+1:size(data,1)),:);
 trainLabels = labels(randIndexes(floor(size(data,1)/10)+1:size(data,1)));
 
 %instantiate weights and biases, train them
-weights = (rand(size(data,2)+1,numOutputs)*2-1)*10^-3;
-%biases = (rand(numOutputs,1)*2-1)*10^-3;
+numLayers = numLayers + 1;
+layerSizes = [layerSizes,numOutputs];
+weights = cell(numlayers,1);
+for i=1:numLayers-1
+    weights{i} = (rand(layerSizes(i+1)+1,layerSizes(i))*2-1)*10^-3;
+weights{numLayers} = (rand(size(data,2)+1,layerSizes(numLayers))*2-1)*10^-3;
 resultsFile = fopen('results.txt','w');
 epoch = 0;
 bestTestError = inf;
 bestTestWeights = 0;
-%bestTestBiases = 0;
 while epoch<epochs
-    weights = trainSingleLayer(trainData,trainLabels,weights,NLFunc,NLDerivative,...
+    weights = trainMultiLayer(trainData,trainLabels,weights,ONLFunc,ONLDerivative,HNLFunc,HNLDerivative,...
         lossDerivative,reportFreq,min(reportFreq,epochs-epoch),stepSizeFunc);
-    [testError,testLoss] = testSingleLayer(testData,testLabels,numOutputs,weights,NLFunc,lossFunc);
-    [trainError,trainLoss] = testSingleLayer(trainData,trainLabels,numOutputs,weights,NLFunc,lossFunc);
+    [testError,testLoss] = testMultiLayer(testData,testLabels,numOutputs,weights,NLFunc,lossFunc);
+    [trainError,trainLoss] = testMultiLayer(trainData,trainLabels,numOutputs,weights,NLFunc,lossFunc);
     epoch = epoch + reportFreq;
     if testError < bestTestError
          bestTestError = testError;
          bestTestWeights = weights;
-         %bestTestBiases = biases;
          bestEpoch = epoch;
     end
     fprintf(resultsFile,'\nEpoch: %d',epoch);
