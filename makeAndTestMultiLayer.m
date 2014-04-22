@@ -1,8 +1,14 @@
 function [ bestTestError, bestTestWeights, bestEpoch] = makeAndTestMultiLayer(data,labels,...
     ONLFunc,ONLDerivative,lossFunc,lossDerivative,HNLFunc,HNLDerivative,...
     layerSizes,epochs,reportFreq,stepSizeFunc)
-% NLFunc - nonlinear function used in neural net e.g. @sigmoid.m
-% NLDerivative - the derivative of NLFunc
+% layerSizes - a vector containing the number of nodes at each layer in the
+% network
+% recommended step size is ~(0.5/(1+i
+% ONLFunc - nonlinear function used in output layer of neural net e.g. @sigmoid.m
+% ONLDerivative - the derivative of ONLFunc
+% HNLFunc - nonlinear function used in hidden layers of neural net e.g.
+% @(x)(1-tanh(x).^2)
+% HNLDerivative - the derivative of HNLFunc
 % lossFunc - the loss function e.g. @meanSquaredLoss.m or @crossEntropyLoss.m
 % lossDerivative - the derivative of lossFunc
 
