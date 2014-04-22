@@ -3,26 +3,27 @@ function [ outputs, weightedSums ] = multiLayerPredict(inputs,weights,ONLFunc,HN
 % number of columns = number of outputs
 % NLFunc - nonlinear function used in neural net
 
-layerInputs = input;
-weightedSums = cell(length(weights));
+layerInputs = [1;inputs'];
+weightedSums = cell(length(weights),1);
+outputs = cell(length(weights),1);
 for layer=1:length(weights)
     layerWeights = weights{layer};
-    layerOutputs = zeros(size(layerWeights,2),1);
-    layerWeightedSums = zeros(size(layerWeights,2),1);    
-    for j=1:length(layerOutputs)
-        layerWeightedSums(j) = layerWeights(1,j);
-        for i=2:length(inputs)+1
-            layerWeightedSums(j) = layerWeightedSums(j) + layerInputs(i-1)*layerWeights(i,j);
-        end
-        if i ~= length(weights)
-            layerOutputs(j) = HNLFunc(weightedSums(j));
-        else
-            layerOutputs(j) = ONLFunc(weightedSums(j));
-        end
+    layerWeightedSums = layerWeights'*layerInputs;
+    %for j=1:length(layerOutputs)
+    %    layerWeightedSums(j) = layerWeights(1,j);
+     %   for i=2:length(layerInputs)+1
+      %      layerWeightedSums(j) = layerWeightedSums(j) + layerInputs(i-1)*layerWeights(i,j);
+       % end
+    %end
+    if layer ~= length(weights)
+            func = HNLFunc;
+    else
+            func = ONLFunc;
     end
-    weightedSums{layer} = weightedSums;
-    layerInputs = layerOutputs;
+    layerOutputs = func(layerWeightedSums);
+    weightedSums{layer} = layerWeightedSums;
+    outputs{layer} = layerOutputs;
+    layerInputs = [1;layerOutputs];
 end
-outputs = layerOutputs;
 end
 

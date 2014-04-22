@@ -26,9 +26,9 @@ trainLabels = labels(randIndexes(floor(size(data,1)/10)+1:size(data,1)));
 %instantiate weights and biases, train them
 numLayers = length(layerSizes);
 weights = cell(numLayers,1);
-weights{1} = (rand(size(data,2)+1,layerSizes(1))*2-1)*(1/sqrt(size(data,2)+1));%10^-3;
+weights{1} = (rand(size(data,2)+1,layerSizes(1))*2-1)*(1/sqrt(size(data,2)));%10^-3;
 for i=2:numLayers
-    weights{i} = (rand(layerSizes(i-1)+1,layerSizes(i))*2-1)*(1/sqrt(layerSizes(i-1)+1));%10^-3;
+    weights{i} = (rand(layerSizes(i-1)+1,layerSizes(i))*2-1)*10^-3;
 end
 resultsFile = fopen('results.txt','w');
 epoch = 0;
@@ -36,7 +36,7 @@ bestTestError = inf;
 bestTestWeights = 0;
 while epoch<epochs
     newWeights = trainMultiLayer(trainData,trainLabels,weights,ONLFunc,ONLDerivative,HNLFunc,HNLDerivative,...
-        lossFunc,lossDerivative,reportFreq,min(reportFreq,epochs-epoch),stepSizeFunc);
+        lossDerivative,reportFreq,min(reportFreq,epochs-epoch),stepSizeFunc);
     weights = newWeights;
     [testError,testLoss] = testMultiLayer(testData,testLabels,weights,ONLFunc,HNLFunc,lossFunc);
     [trainError,trainLoss] = testMultiLayer(trainData,trainLabels,weights,ONLFunc,HNLFunc,lossFunc);
