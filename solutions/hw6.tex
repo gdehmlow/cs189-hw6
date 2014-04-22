@@ -68,7 +68,39 @@ $\frac{\sigma J}{\sigma b_j} =
 \cdot (y_j - t_j)
 $
 
- 
+\paragraph{2.}
+
+Now let us derive the stochastic gradient descent of the cross entropy error. The equation we start out with is:
+
+$J = - \sum\limits_{k=1}^{n_{out}} [t_k ln(y_k) + (1 - t_k)ln(1-y_k)]$
+
+Again like in the previous derivation, since we are dealing with only a single layer we get:
+
+$\frac{\sigma J}{\sigma w_{ij}} = 
+\frac{\sigma J}{\sigma y_j} \cdot \frac{\sigma y_j}{\sigma S_j} \cdot \frac{\sigma S_j}{\sigma w_{ij}}$
+
+We also know:
+
+$y_k = \sigma(s_k,b_k) = \frac{1}{1 + exp(-(s_k + b_k))}$
+
+$\frac{\sigma J}{\sigma w_{ij}}= -(\frac{t_k}{y_k} - \frac{1 - t_k}{1 - y_k}) \cdot
+\frac{exp(-(s_k + b_k))}{(1 + exp(-(s_k + b_k)))^2}
+\cdot x_i $
+
+$\frac{\sigma J}{\sigma w_{ij}}= (\frac{y_k - t_k}{y_k(1 - y_k)}) \cdot
+\frac{exp(-(s_k + b_k))}{(1 + exp(-(s_k + b_k)))^2}
+\cdot x_i $
+
+Then we use this to compute the gradient and perform the update step like on the previous page. Then for the bias we get:
+
+$\frac{\sigma J}{\sigma b_j}=
+\frac{\sigma J}{\sigma y_j} \cdot \frac{\sigma y_j}{\sigma b_j}
+= (\frac{y_k - t_k}{y_k(1 - y_k)}) \cdot
+\frac{exp(-(s_k + b_k))}{(1 + exp(-(s_k + b_k)))^2}
+$
+
+Again you compute $\frac{\sigma J}{\sigma b_j}$ for a point and then do the gradient step. For mini batches you simply average $\frac{\sigma J}{\sigma w}$ for each data point in the minibatch.
+
 
 \newpage
 \section*{Appendix}
