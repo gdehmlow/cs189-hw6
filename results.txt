@@ -1,21 +1,21 @@
 
-Epoch: 10
-	trainingError:	0.084463
-	trainingLoss:	5458.265992
-	testError:	0.092333
-	testLoss:	664.154343
-Epoch: 20
-	trainingError:	0.079685
-	trainingLoss:	5310.144046
-	testError:	0.086500
-	testLoss:	659.505905
-Epoch: 30
-	trainingError:	0.078259
-	trainingLoss:	5211.078386
-	testError:	0.086667
-	testLoss:	657.818628
-Epoch: 40
-	trainingError:	0.076407
-	trainingLoss:	5181.694856
-	testError:	0.085500
-	testLoss:	655.699944
+Epoch: 1
+	trainingError:	0.237889
+	trainingLoss:	14317.677298
+	testError:	0.233000
+	testLoss:	1600.277603
+Epoch: 2
+	trainingError:	0.135444
+	trainingLoss:	8256.875221
+	testError:	0.129000
+	testLoss:	908.769106
+Epoch: 3
+	trainingError:	0.127333
+	trainingLoss:	7136.345604
+	testError:	0.121000
+	testLoss:	783.217511
+Epoch: 4
+	trainingError:	0.108556
+	trainingLoss:	6384.062313
+	testError:	0.106000
+	testLoss:	702.418480
