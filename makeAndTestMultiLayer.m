@@ -1,4 +1,4 @@
-function [ bestTestError, bestTestWeights, bestEpoch] = makeAndTestMultiLayer(data,labels,...
+function [trainingErrors,testErrors,trainingLosses,testLosses,epochList] = makeAndTestMultiLayer(data,labels,...
     ONLFunc,ONLDerivative,lossFunc,lossDerivative,HNLFunc,HNLDerivative,...
     layerSizes,epochs,reportFreq,stepSizeFunc)
 % layerSizes - a vector containing the number of nodes at each layer in the
@@ -36,10 +36,16 @@ weights{1} = (rand(size(data,2)+1,layerSizes(1))*2-1)*(1/sqrt(size(data,2)+1));%
 for i=2:numLayers
     weights{i} = (rand(layerSizes(i-1)+1,layerSizes(i))*2-1)*(1/sqrt(layerSizes(i-1)+1));%10^-3;
 end
-resultsFile = fopen('results.txt','w');
+resultsFile = fopen('multiLayerResults.txt','w');
 epoch = 0;
 bestTestError = inf;
 bestTestWeights = 0;
+trainingErrors = [];
+trainingLosses = [];
+testErrors = [];
+testLosses = [];
+epochList = [];
+index = 1;
 while epoch<epochs
     newWeights = trainMultiLayer(trainData,trainLabels,weights,ONLFunc,ONLDerivative,HNLFunc,HNLDerivative,...
         lossFunc,lossDerivative,reportFreq,min(reportFreq,epochs-epoch),stepSizeFunc);
@@ -52,6 +58,12 @@ while epoch<epochs
          bestTestWeights = weights;
          bestEpoch = epoch;
     end
+    trainingErrors(index) = trainError;
+    trainingLosses(index) = trainLoss;
+    testErrors(index) = testError;
+    testLosses(index) = testLoss;
+    epochList(index) = epoch;
+    index = index + 1;
     fprintf(resultsFile,'\nEpoch: %d',epoch);
     fprintf(resultsFile,'\n\ttrainingError:\t');
     fprintf(resultsFile,'%f', trainError);

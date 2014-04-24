@@ -1,0 +1,206 @@
+
+Epoch: 1
+	trainingError:	0.122407
+	trainingLoss:	49628.580929
+	testError:	0.122000
+	testLoss:	5529.802418
+Epoch: 2
+	trainingError:	0.106963
+	trainingLoss:	43313.424258
+	testError:	0.108833
+	testLoss:	4842.992729
+Epoch: 3
+	trainingError:	0.102685
+	trainingLoss:	40813.888350
+	testError:	0.107167
+	testLoss:	4576.354174
+Epoch: 4
+	trainingError:	0.099778
+	trainingLoss:	39586.206185
+	testError:	0.103167
+	testLoss:	4454.662233
+Epoch: 5
+	trainingError:	0.098944
+	trainingLoss:	38834.285869
+	testError:	0.104500
+	testLoss:	4366.003831
+Epoch: 6
+	trainingError:	0.096667
+	trainingLoss:	38112.220715
+	testError:	0.101000
+	testLoss:	4296.404612
+Epoch: 7
+	trainingError:	0.092630
+	trainingLoss:	37566.822867
+	testError:	0.099667
+	testLoss:	4256.741015
+Epoch: 8
+	trainingError:	0.092685
+	trainingLoss:	37148.639230
+	testError:	0.100167
+	testLoss:	4210.531863
+Epoch: 9
+	trainingError:	0.091500
+	trainingLoss:	36657.538065
+	testError:	0.098167
+	testLoss:	4172.637355
+Epoch: 10
+	trainingError:	0.090074
+	trainingLoss:	36278.680303
+	testError:	0.096667
+	testLoss:	4120.812075
+Epoch: 11
+	trainingError:	0.089185
+	trainingLoss:	36025.488033
+	testError:	0.095333
+	testLoss:	4101.584875
+Epoch: 12
+	trainingError:	0.088963
+	trainingLoss:	36083.389515
+	testError:	0.095667
+	testLoss:	4138.386300
+Epoch: 13
+	trainingError:	0.087796
+	trainingLoss:	35608.922618
+	testError:	0.095167
+	testLoss:	4071.801332
+Epoch: 14
+	trainingError:	0.087185
+	trainingLoss:	35568.670518
+	testError:	0.093500
+	testLoss:	4084.130181
+Epoch: 15
+	trainingError:	0.085926
+	trainingLoss:	35182.892552
+	testError:	0.094500
+	testLoss:	4031.570079
+Epoch: 16
+	trainingError:	0.085648
+	trainingLoss:	35260.317158
+	testError:	0.092500
+	testLoss:	4047.514206
+Epoch: 17
+	trainingError:	0.085519
+	trainingLoss:	35089.339434
+	testError:	0.094833
+	testLoss:	4042.451969
+Epoch: 18
+	trainingError:	0.085870
+	trainingLoss:	35300.920037
+	testError:	0.095167
+	testLoss:	4065.770414
+Epoch: 19
+	trainingError:	0.084093
+	trainingLoss:	34829.668215
+	testError:	0.091833
+	testLoss:	4009.092646
+Epoch: 20
+	trainingError:	0.083907
+	trainingLoss:	34664.694555
+	testError:	0.090167
+	testLoss:	3992.843986
+Epoch: 21
+	trainingError:	0.083815
+	trainingLoss:	34616.203518
+	testError:	0.093500
+	testLoss:	3988.322031
+Epoch: 22
+	trainingError:	0.084333
+	trainingLoss:	34674.809479
+	testError:	0.091000
+	testLoss:	4002.010408
+Epoch: 23
+	trainingError:	0.083056
+	trainingLoss:	34353.948819
+	testError:	0.092667
+	testLoss:	3971.932678
+Epoch: 24
+	trainingError:	0.084352
+	trainingLoss:	34565.436835
+	testError:	0.092167
+	testLoss:	3983.111234
+Epoch: 25
+	trainingError:	0.082093
+	trainingLoss:	34110.577574
+	testError:	0.091667
+	testLoss:	3951.421142
+Epoch: 26
+	trainingError:	0.082852
+	trainingLoss:	34264.879098
+	testError:	0.092333
+	testLoss:	3964.277726
+Epoch: 27
+	trainingError:	0.082870
+	trainingLoss:	34113.166274
+	testError:	0.091333
+	testLoss:	3943.589606
+Epoch: 28
+	trainingError:	0.081796
+	trainingLoss:	34143.379640
+	testError:	0.090167
+	testLoss:	3972.880105
+Epoch: 29
+	trainingError:	0.082741
+	trainingLoss:	34022.276879
+	testError:	0.088667
+	testLoss:	3943.668914
+Epoch: 30
+	trainingError:	0.081648
+	trainingLoss:	33868.624907
+	testError:	0.089833
+	testLoss:	3929.332788
+Epoch: 31
+	trainingError:	0.081519
+	trainingLoss:	33845.032124
+	testError:	0.089833
+	testLoss:	3934.436559
+Epoch: 32
+	trainingError:	0.080759
+	trainingLoss:	33784.932187
+	testError:	0.089667
+	testLoss:	3937.434599
+Epoch: 33
+	trainingError:	0.081259
+	trainingLoss:	33881.164433
+	testError:	0.089667
+	testLoss:	3956.961857
+Epoch: 34
+	trainingError:	0.082278
+	trainingLoss:	34049.202789
+	testError:	0.092500
+	testLoss:	3960.244670
+Epoch: 35
+	trainingError:	0.080870
+	trainingLoss:	33627.414899
+	testError:	0.088167
+	testLoss:	3919.653288
+Epoch: 36
+	trainingError:	0.081667
+	trainingLoss:	33907.592318
+	testError:	0.093000
+	testLoss:	3942.535331
+Epoch: 37
+	trainingError:	0.080333
+	trainingLoss:	33751.826590
+	testError:	0.087500
+	testLoss:	3947.394288
+Epoch: 38
+	trainingError:	0.080981
+	trainingLoss:	33735.788818
+	testError:	0.090500
+	testLoss:	3925.414580
+Epoch: 39
+	trainingError:	0.079315
+	trainingLoss:	33354.258444
+	testError:	0.088333
+	testLoss:	3901.300354
+Epoch: 40
+	trainingError:	0.080352
+	trainingLoss:	33358.266032
+	testError:	0.090167
+	testLoss:	3901.581300
+Epoch: 41
+	trainingError:	0.080889
+	trainingLoss:	33723.938856
+	testError:	0.090167
+	testLoss:	3936.985509

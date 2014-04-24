@@ -1,0 +1,59 @@
+The write of derivations is in hw6.pdf, and the implementation details and findings are in report.pdf. Both are in the solutions directory.
+
+To replicate our findings the functions you'll want use are makeAndTestSingleLayer.m and makeAndTestMultiLayer.m
+
+
+
+
+
+makeAndTestSingleLayer takes in:
+data - the data to be split into validation and training data
+labels - the labels for the data
+NLFunc - the function handle for the nonlinear activation function of the network 
+NLDerivative - the function handle of NLFunc's derivative
+(sigmoid.m and sigmoidDerivative.m)
+lossFunc - function handle for the loss function
+lossDerivative - function handle for the loss function's derivative
+(crossEntropyLoss.m,CrossEntropyLossDerivarive.m,meanSquareLoss.m,meanSquareLossDerivative.m)
+epochs - the number of epochs to train the network for
+reportFreq - how often to write results to a file
+stepSizeFunc - function handle for stepSize function based on epoch
+(recommended is @(i) .08/(1+i)^.6)
+
+it outputs:
+TrainingErrors -  a vector of training set errors with respect to epochs with reportFreq  sized gaps
+TrainingLosses - a vector of training set losses with respect to epochs with reportFreq  sized gaps
+TestErrors -  a vector of validation set errors with respect to epochs with reportFreq  sized gaps
+TrainingLosses - a vector of validation set losses with respect to epochs with reportFreq  sized gaps
+
+*** The activation functions should be able to operate on vectors.
+
+
+
+
+
+
+makeAndTestMultiLayer.m is very similar, it takes in:
+data - the data to be split into validation and training data
+labels - the labels for the data
+ONLFunc - the function handle for the nonlinear activation function of the network's output nodes
+ONLDerivative - the function handle of ONLFunc's derivative
+(sigmoid.m and sigmoidDerivative.m)
+HNLFunc - the function handle for the nonlinear activation function of the network's hidden nodes
+HNLDerivative - the function handle of HNLFunc's derivative
+(@(x)tanh(x),@(x)(1-tanh(x).^2))
+lossFunc - function handle for the loss function
+lossDerivative - function handle for the loss function's derivative
+(crossEntropyLoss.m,CrossEntropyLossDerivarive.m,meanSquareLoss.m,meanSquareLossDerivative.m)
+epochs - the number of epochs to train the network for
+reportFreq - how often to write results to a file
+stepSizeFunc - function handle for stepSize function based on epoch
+(recommended is @(i) .01/(1+i)^.6)
+
+it outputs:
+TrainingErrors -  a vector of training set errors with respect to epochs with reportFreq  sized gaps
+TrainingLosses - a vector of training set losses with respect to epochs with reportFreq  sized gaps
+TestErrors -  a vector of validation set errors with respect to epochs with reportFreq  sized gaps
+TrainingLosses - a vector of validation set losses with respect to epochs with reportFreq  sized gaps
+
+*** The activation functions should be able to operate on vectors.
